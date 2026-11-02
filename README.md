@@ -169,7 +169,7 @@ The lab included the following activities:
 
 ### Network Topology
 
-![Enterprise Network Topology](../screenshots/network-topology.png)
+![Enterprise Network Topology](./screenshots/network-topology.png)
 
 *Network topology simulated using Cisco Packet Tracer during the first workshop.*
 
