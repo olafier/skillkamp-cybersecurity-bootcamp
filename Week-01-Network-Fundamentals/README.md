@@ -39,7 +39,7 @@ The topology demonstrated connectivity across LAN and WAN segments, routing betw
 
 ### Enterprise Network Simulation
 
-![Enterprise Network Topology](screenshots/network-topology.png)
+![Enterprise Network Topology](../screenshots/network-topology.png)
 
 *Figure 1. Enterprise network topology used during the Week 01 workshop.*
 
