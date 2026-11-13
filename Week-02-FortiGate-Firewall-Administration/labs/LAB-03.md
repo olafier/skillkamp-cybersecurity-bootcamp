@@ -4,8 +4,6 @@
 
 ![ภาพรวม LAB 03 (infographic)](images/lab03/LAB03_infographic.png)
 
-![ภาพรวมหน้าแล็บ](images/lab03/Screenshot_overview.png)
-
 ## ภาพรวมแล็บ
 
 **เป้าหมาย:** ฝึกสร้าง address object และ firewall policy, ดูผลของลำดับ policy, ทำ DNAT ด้วย VIP และทำ SNAT ด้วย IP Pool บน HQ-NGFW-1

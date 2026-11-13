@@ -156,29 +156,29 @@ The lab included the following activities:
 
 ## Self-Paced Virtual Labs — Cloud Track (Group A)
 
-Alongside the live EP.5 workshop above, I completed six hands-on labs from the FortiOS 7.6 Administrator virtual lab. These are the "Group A" track — the foundations that map most directly to cloud and infrastructure security (and carry over to FortiGate-VM in the cloud). Each lab was built end-to-end in the virtual lab and verified from the CLI.
+Alongside the live EP.5 workshop above, I completed six hands-on labs from the FortiOS 7.6 Administrator virtual lab. These are the "Group A" track — the foundations that map most directly to cloud and infrastructure security (and carry over to FortiGate-VM in the cloud). Each lab was built end-to-end in the virtual lab and verified from the CLI. Full step-by-step write-ups with annotated screenshots are in [`labs/`](labs/) (click each lab title below).
 
-**Lab 01 — System & Network Settings**
+**[Lab 01 — System & Network Settings](labs/LAB-01.md)**
 Configured FortiGate interfaces (manual / DHCP / PPPoE, interface roles) through both GUI and CLI; created role-based admin profiles and admin users with trusted-host restrictions; practiced configuration backup and restore.
 Skills: NGFW initial bring-up, least-privilege administration, trusted hosts.
 
-**Lab 03 — Firewall Policies & NAT**
+**[Lab 03 — Firewall Policies & NAT](labs/LAB-03.md)**
 Built and ordered firewall policies (first-match evaluation) and used Show Matching Logs to verify hits; configured Source NAT with an outgoing interface and an IP Pool, and published an internal server externally with a Virtual IP (static DNAT and port forwarding).
 Skills: stateful policy design, SNAT and DNAT, VIP publishing.
 
-**Lab 04 — Routing**
+**[Lab 04 — Routing](labs/LAB-04.md)**
 Created multiple static and default routes, then tuned administrative distance and priority to achieve failover and ECMP; validated with the routing monitor, Route Lookup, and get router info routing-table all.
 Skills: static routing, redundant links, ECMP load balancing.
 
-**Lab 11 — IPsec VPN**
+**[Lab 11 — IPsec VPN](labs/LAB-11.md)**
 Configured a site-to-site route-based IPsec VPN between two FortiGates (phase 1 / phase 2, static route, firewall policy), including a backup tunnel on a higher administrative distance; verified with the IPsec widget, VPN event logs, and diagnose vpn tunnel list.
 Skills: route-based IPsec, VPN redundancy, tunnel troubleshooting.
 
-**Lab 12 — SD-WAN**
+**[Lab 12 — SD-WAN](labs/LAB-12.md)**
 Built SD-WAN zones and members, zone static routes, Performance SLA health checks, and SD-WAN rules using different load-balancing strategies; confirmed traffic steering with Forward Traffic logs, the SD-WAN monitor, and diagnose firewall proute list.
 Skills: SD-WAN design, performance SLA, application-aware steering.
 
-**Lab 13 — High Availability**
+**[Lab 13 — High Availability](labs/LAB-13.md)**
 Set up two FortiGates as an HA cluster (group ID / name, password, heartbeat, priority / override); verified with get system ha status and diagnose sys ha checksum cluster, triggered a manual failover, and managed the secondary unit with execute ha manage.
 Skills: FGCP HA clustering, failover testing, reserved management interface.
 
