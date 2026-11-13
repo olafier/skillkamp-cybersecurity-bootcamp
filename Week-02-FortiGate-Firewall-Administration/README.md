@@ -153,3 +153,33 @@ The lab included the following activities:
 *Simplified lab topology used during the second workshop.*
 
 ---
+
+## Self-Paced Virtual Labs — Cloud Track (Group A)
+
+Alongside the live EP.5 workshop above, I completed six hands-on labs from the FortiOS 7.6 Administrator virtual lab. These are the "Group A" track — the foundations that map most directly to cloud and infrastructure security (and carry over to FortiGate-VM in the cloud). Each lab was built end-to-end in the virtual lab and verified from the CLI.
+
+**Lab 01 — System & Network Settings**
+Configured FortiGate interfaces (manual / DHCP / PPPoE, interface roles) through both GUI and CLI; created role-based admin profiles and admin users with trusted-host restrictions; practiced configuration backup and restore.
+Skills: NGFW initial bring-up, least-privilege administration, trusted hosts.
+
+**Lab 03 — Firewall Policies & NAT**
+Built and ordered firewall policies (first-match evaluation) and used Show Matching Logs to verify hits; configured Source NAT with an outgoing interface and an IP Pool, and published an internal server externally with a Virtual IP (static DNAT and port forwarding).
+Skills: stateful policy design, SNAT and DNAT, VIP publishing.
+
+**Lab 04 — Routing**
+Created multiple static and default routes, then tuned administrative distance and priority to achieve failover and ECMP; validated with the routing monitor, Route Lookup, and get router info routing-table all.
+Skills: static routing, redundant links, ECMP load balancing.
+
+**Lab 11 — IPsec VPN**
+Configured a site-to-site route-based IPsec VPN between two FortiGates (phase 1 / phase 2, static route, firewall policy), including a backup tunnel on a higher administrative distance; verified with the IPsec widget, VPN event logs, and diagnose vpn tunnel list.
+Skills: route-based IPsec, VPN redundancy, tunnel troubleshooting.
+
+**Lab 12 — SD-WAN**
+Built SD-WAN zones and members, zone static routes, Performance SLA health checks, and SD-WAN rules using different load-balancing strategies; confirmed traffic steering with Forward Traffic logs, the SD-WAN monitor, and diagnose firewall proute list.
+Skills: SD-WAN design, performance SLA, application-aware steering.
+
+**Lab 13 — High Availability**
+Set up two FortiGates as an HA cluster (group ID / name, password, heartbeat, priority / override); verified with get system ha status and diagnose sys ha checksum cluster, triggered a manual failover, and managed the secondary unit with execute ha manage.
+Skills: FGCP HA clustering, failover testing, reserved management interface.
+
+*Labs 01, 03 and 04 cover the same foundations reinforced in the live EP.5 workshop above; Labs 11-13 extend into secure connectivity, SD-WAN, and high availability.*
