@@ -1,6 +1,7 @@
 # 🔬 LAB 11 สรุป: IPsec VPN แบบ Dial-up vs Static (FortiGate)
 
-> หมายเหตุ: รูปภาพประกอบอยู่ใน `images/lab11/`
+> 🇬🇧 English version: [LAB-11-EN.md](LAB-11-EN.md)
+> รูปภาพประกอบอยู่ใน `images/lab11/`
 
 ## ภาพรวม LAB 11
 

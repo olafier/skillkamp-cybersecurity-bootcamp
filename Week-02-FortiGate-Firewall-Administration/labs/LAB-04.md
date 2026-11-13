@@ -1,6 +1,7 @@
 # 🔬 LAB 04 สรุป: Routing (Failover และ ECMP)
 
-> หมายเหตุ: รูปภาพประกอบอยู่ใน `images/lab04/`
+> 🇬🇧 English version: [LAB-04-EN.md](LAB-04-EN.md)
+> รูปภาพประกอบอยู่ใน `images/lab04/`
 
 ![ภาพรวม LAB 04 (infographic)](images/lab04/LAB04_infographic.png)
 

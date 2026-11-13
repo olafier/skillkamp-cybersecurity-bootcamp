@@ -1,6 +1,7 @@
 # 🔬 LAB 03 สรุป: Firewall Policies and NAT
 
-> หมายเหตุ: รูปภาพประกอบ (`images/lab03/...`) จะเพิ่มทีหลัง — โครงสร้างลิงก์รูปเตรียมไว้แล้ว
+> 🇬🇧 English version: [LAB-03-EN.md](LAB-03-EN.md)
+> รูปภาพประกอบอยู่ใน `images/lab03/`
 
 ![ภาพรวม LAB 03 (infographic)](images/lab03/LAB03_infographic.png)
 

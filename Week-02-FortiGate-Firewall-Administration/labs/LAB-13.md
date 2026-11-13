@@ -1,6 +1,7 @@
 # 🔬 LAB 13 สรุป: High Availability (HA)
 
-> หมายเหตุ: รูปภาพประกอบอยู่ใน `images/lab13/`
+> 🇬🇧 English version: [LAB-13-EN.md](LAB-13-EN.md)
+> รูปภาพประกอบอยู่ใน `images/lab13/`
 
 ![ภาพรวม LAB 13 (infographic)](images/lab13/LAB13_infographic.png)
 

@@ -1,6 +1,7 @@
 # 🔬 LAB 12 สรุป: SD-WAN
 
-> หมายเหตุ: รูปภาพประกอบอยู่ใน `images/lab12/`
+> 🇬🇧 English version: [LAB-12-EN.md](LAB-12-EN.md)
+> รูปภาพประกอบอยู่ใน `images/lab12/`
 
 ให้ HQ-NGFW-1 ส่ง Bloomberg และ CNN ออก port2 ก่อน ส่วนโซเชียลมีเดียกับเกมออก port3 อย่างเดียว
 

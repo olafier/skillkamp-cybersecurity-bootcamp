@@ -1,6 +1,7 @@
 # 🔬 LAB 01 สรุป: System and Network Settings (Administrator Accounts)
 
-> หมายเหตุ: รูปภาพประกอบ (`images/lab01/...`) จะเพิ่มทีหลัง — โครงสร้างลิงก์รูปเตรียมไว้แล้ว
+> 🇬🇧 English version: [LAB-01-EN.md](LAB-01-EN.md)
+> รูปภาพประกอบอยู่ใน `images/lab01/`
 
 ![ภาพรวม LAB 01 (infographic)](images/lab01/LAB01_infographic.png)
 
