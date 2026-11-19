@@ -1,6 +1,6 @@
 ## Week 03 — SOC Analyst using FortiAnalyzer
 
-> 🇹🇭 Thai version: [README-TH.md](README-TH.md)
+> Thai version: [README-TH.md](README-TH.md)
 
 **Date:** November 14–19, 2026  
 **Platform:** FortiAnalyzer 7.6.2 Analyst Virtual Lab (CIPAT SOC Analyst Lab)  

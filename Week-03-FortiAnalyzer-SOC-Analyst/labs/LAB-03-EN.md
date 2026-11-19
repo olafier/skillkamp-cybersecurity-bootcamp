@@ -1,6 +1,6 @@
 # 🔬 LAB 03 Summary: Incident and Event Management
 
-> 🇹🇭 Thai version: [LAB-03.md](LAB-03.md)
+> Thai version: [LAB-03.md](LAB-03.md)
 > Screenshots are in `images/lab03/`
 
 ## Lab Overview

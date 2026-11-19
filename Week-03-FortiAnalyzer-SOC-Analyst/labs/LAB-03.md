@@ -1,6 +1,6 @@
 # 🔬 LAB 03 สรุป: Incident and Event Management
 
-> 🇬🇧 English version: [LAB-03-EN.md](LAB-03-EN.md)
+> English version: [LAB-03-EN.md](LAB-03-EN.md)
 > รูปภาพประกอบอยู่ใน `images/lab03/`
 
 ## ภาพรวมแล็บ

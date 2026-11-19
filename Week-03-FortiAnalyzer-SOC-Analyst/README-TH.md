@@ -1,6 +1,6 @@
 ## Week 03 — SOC Analyst ด้วย FortiAnalyzer
 
-> 🇬🇧 English version: [README.md](README.md)
+> English version: [README.md](README.md)
 
 **วันที่:** 14–19 พฤศจิกายน 2026  
 **แพลตฟอร์ม:** FortiAnalyzer 7.6.2 Analyst Virtual Lab (CIPAT SOC Analyst Lab)  

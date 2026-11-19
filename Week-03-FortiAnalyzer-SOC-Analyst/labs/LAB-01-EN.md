@@ -1,6 +1,6 @@
 # 🔬 LAB 01 Summary: SOC Concepts and Security Fabric (Initial Configuration)
 
-> 🇹🇭 Thai version: [LAB-01.md](LAB-01.md)
+> Thai version: [LAB-01.md](LAB-01.md)
 > Screenshots are in `images/lab01/`
 
 ## Lab Overview
