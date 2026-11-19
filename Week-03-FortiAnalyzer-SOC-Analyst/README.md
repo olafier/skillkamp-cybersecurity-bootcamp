@@ -1,5 +1,7 @@
 ## Week 03 — SOC Analyst using FortiAnalyzer
 
+> 🇹🇭 Thai version: [README-TH.md](README-TH.md)
+
 **Date:** November 14–19, 2026  
 **Platform:** FortiAnalyzer 7.6.2 Analyst Virtual Lab (CIPAT SOC Analyst Lab)  
 **Course:** FortiAnalyzer 7.6 Analyst (FTAO)
@@ -104,5 +106,3 @@ Skills: log search and investigation, FortiView, log pipeline and storage planni
 **[Lab 03 — Incident and Event Management](labs/LAB-03.md)** ([English](labs/LAB-03-EN.md))
 Worked through the full event lifecycle: IPS events, cloned and custom event handlers with email alerts, incident creation and closure, hypothesis-driven threat hunting for DNS tunneling, and the Log4j2 Outbreak Alert.
 Skills: event handling, incident response workflow, threat hunting, threat intelligence.
-
-*Lab 04 (Indicators, enrichment with FortiGuard/VirusTotal, and an automation stitch that bans an IP on FortiGate) was reviewed from the lab guide only, because the lab access period ended before it could be run.*
