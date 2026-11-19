@@ -1,77 +1,77 @@
-# 🔬 LAB 01 สรุป: SOC Concepts and Security Fabric (Initial Configuration)
+# 🔬 LAB 01 สรุป: แนวคิด SOC และ Security Fabric (การตั้งค่าเริ่มต้น)
 
-> 🇬🇧 English version: [LAB-01-EN.md](LAB-01-EN.md)
+> English version: [LAB-01-EN.md](LAB-01-EN.md)
 > รูปภาพประกอบอยู่ใน `images/lab01/`
 
 ## ภาพรวมแล็บ
 
-**เป้าหมาย:** restore config เริ่มต้นของ FortiAnalyzer จากไฟล์ backup ตรวจว่ามี ADOM และ FortiGate ครบ แล้วดูสถานะเครื่องด้วย CLI เป็นการเตรียมเครื่องสำหรับ LAB 02–03
+**เป้าหมาย:** กู้คืนค่าตั้งเริ่มต้นของ FortiAnalyzer จากไฟล์สำรอง ตรวจว่ามีโดเมนผู้ดูแล (ADOM) และไฟร์วอลล์ FortiGate ครบ แล้วดูสถานะเครื่องผ่านหน้าพิมพ์คำสั่ง เป็นการเตรียมเครื่องสำหรับแล็บ 02–03
 
-**คอร์ส:** FortiAnalyzer 7.6 Analyst (FTAO) · CIPAT SOC Analyst Lab · FortiAnalyzer v7.6.2 build3415
+**คอร์ส:** FortiAnalyzer 7.6 Analyst (FTAO) · แล็บนักวิเคราะห์ SOC ของ CIPAT · FortiAnalyzer รุ่น 7.6.2 build3415
 
 | อุปกรณ์ | IP | หน้าที่ในแล็บ |
 | --- | --- | --- |
-| HQ-PC-1 (Ubuntu) | 10.0.11.50 | เปิด Firefox เข้า GUI ของ FortiAnalyzer |
-| FortiAnalyzer (FAZ) | 10.0.13.125 | เครื่องเก็บและวิเคราะห์ log |
-| HQ-NGFW-1 | 10.0.13.254 (ฝั่ง FAZ) | FortiGate หลัก (ADOM1, root ของ Security Fabric) |
-| HQ-ISFW | 10.0.11.253 | FortiGate ภายใน (ADOM1) |
-| BR1-FGT-1 | 192.168.1.111 | FortiGate สาขา (ADOM2) |
+| HQ-PC-1 (Ubuntu) | 10.0.11.50 | เปิดเบราว์เซอร์ Firefox เข้าหน้าเว็บจัดการของ FortiAnalyzer |
+| FortiAnalyzer (FAZ) | 10.0.13.125 | เครื่องเก็บและวิเคราะห์บันทึกเหตุการณ์ (log) |
+| HQ-NGFW-1 | 10.0.13.254 (ขาที่ต่อกับ FAZ) | ไฟร์วอลล์หลัก (อยู่ใน ADOM1 และเป็นเครื่องแม่ของ Security Fabric) |
+| HQ-ISFW | 10.0.11.253 | ไฟร์วอลล์แบ่งเครือข่ายภายใน (อยู่ใน ADOM1) |
+| BR1-FGT-1 | 192.168.1.111 | ไฟร์วอลล์สาขา (อยู่ใน ADOM2) |
 
-## Exercise 1 ส่วน A: Restore config เริ่มต้น
+## แบบฝึกหัด 1 ส่วน ก: กู้คืนค่าตั้งเริ่มต้น
 
-1. login GUI แล้วจะเจอหน้า **Select an ADOM** (เพราะไฟล์ backup เปิดใช้ ADOM ไว้)
-2. **Dashboards > Status** → widget **System Information** แถว System Configuration กดไอคอน **Restore** (ระวังอย่ากด Backup ที่อยู่ข้างกัน)
-3. ปิดสวิตช์ **Overwrite current IP and routing settings** เพื่อไม่ให้ IP/route ของเครื่องแล็บถูกทับ
-4. เลือกไฟล์ `Desktop > Resources > FortiAnalyzer Analyst > FortiAnalyzer_Analyst_Initial > FAZ_Initial.dat` (292.6 MB) ใส่รหัสไฟล์แล้วกด OK
-5. รอเครื่อง restart 3–5 นาทีแล้ว login ใหม่ Alert Message Console จะขึ้น *Restore all settings.*
+1. พอเข้าสู่ระบบแล้วจะเจอหน้า **Select an ADOM** (เลือกโดเมนผู้ดูแล) เพราะไฟล์สำรองเปิดใช้ ADOM ไว้แล้ว
+2. ไปที่ **Dashboards > Status** ในกล่อง **System Information** แถว System Configuration กดไอคอน **Restore** (กู้คืน) ระวังอย่ากดไอคอน Backup (สำรอง) ที่อยู่ข้างกัน
+3. ปิดสวิตช์ **Overwrite current IP and routing settings** เพื่อไม่ให้ค่า IP และเส้นทางเครือข่ายของเครื่องแล็บถูกเขียนทับ
+4. เลือกไฟล์ `Desktop > Resources > FortiAnalyzer Analyst > FortiAnalyzer_Analyst_Initial > FAZ_Initial.dat` (ขนาด 292.6 MB) ใส่รหัสผ่านของไฟล์ แล้วกด OK
+5. รอเครื่องเริ่มระบบใหม่ 3–5 นาที แล้วเข้าสู่ระบบอีกครั้ง กล่องข้อความแจ้งเตือนจะขึ้นว่า *Restore all settings.* (กู้คืนค่าทั้งหมดแล้ว)
 
-![หน้า Select an ADOM หลัง login](images/lab01/01_select_adom.png)
+![หน้าเลือก ADOM หลังเข้าสู่ระบบ](images/lab01/01_select_adom.png)
 
-![หน้าต่าง Restore System](images/lab01/04_restore_dialog.png)
+![หน้าต่างกู้คืนระบบ](images/lab01/04_restore_dialog.png)
 
-![ไฟล์ FAZ_Initial.dat](images/lab01/06_faz_initial_dat.png)
+![ไฟล์สำรอง FAZ_Initial.dat](images/lab01/06_faz_initial_dat.png)
 
-![Dashboard หลัง restore: Restore all settings.](images/lab01/11_dashboard_after_restore.png)
+![หน้าแดชบอร์ดหลังกู้คืน: ขึ้นข้อความ Restore all settings.](images/lab01/11_dashboard_after_restore.png)
 
-## Exercise 1 ส่วน B: ตรวจ ADOM และอุปกรณ์
+## แบบฝึกหัด 1 ส่วน ข: ตรวจ ADOM และอุปกรณ์
 
-| ADOM | ประเภท | อุปกรณ์ |
+| ADOM | ประเภท | อุปกรณ์ข้างใน |
 | --- | --- | --- |
-| ADOM1 | **Fabric** | HQ-NGFW-1 (root ของ Fabric *Training-Lab*) และ HQ-ISFW |
+| ADOM1 | **Fabric** | HQ-NGFW-1 (เครื่องแม่ของ Fabric ชื่อ *Training-Lab*) และ HQ-ISFW |
 | ADOM2 | **FortiGate** | BR1-FGT-1 |
 
-ADOM1 เป็นประเภท Fabric เพราะ FortiGate 2 ตัวอยู่ใน Security Fabric เดียวกัน FortiAnalyzer จึง correlate log ข้ามอุปกรณ์ได้ ส่วน ADOM2 เป็นเครื่องเดี่ยว
+ADOM1 เป็นประเภท Fabric เพราะไฟร์วอลล์ 2 เครื่องอยู่ใน Security Fabric ชุดเดียวกัน FortiAnalyzer จึงเชื่อมโยงบันทึกข้ามอุปกรณ์ได้ ส่วน ADOM2 เป็นไฟร์วอลล์เครื่องเดี่ยว
 
-![Device Manager ของ ADOM1](images/lab01/12_adom1_devices.png)
+![หน้าจัดการอุปกรณ์ของ ADOM1](images/lab01/12_adom1_devices.png)
 
-![Device Manager ของ ADOM2](images/lab01/14_adom2_devices.png)
+![หน้าจัดการอุปกรณ์ของ ADOM2](images/lab01/14_adom2_devices.png)
 
-## Exercise 1 ส่วน C: CLI
+## แบบฝึกหัด 1 ส่วน ค: หน้าพิมพ์คำสั่ง (CLI)
 
-เปิด CLI จากไอคอน **>_** บนแถบด้านบน แล้วรัน `get system status`
+เปิดหน้าพิมพ์คำสั่งจากไอคอน **>_** บนแถบด้านบน แล้วพิมพ์ `get system status`
 
-| ฟิลด์ | ค่า | ความหมาย |
+| ช่องข้อมูล | ค่าที่ได้ | ความหมาย |
 | --- | --- | --- |
-| Platform | FortiAnalyzer-VM64-KVM | VM บน KVM |
-| Version | v7.6.2-build3415 | เวอร์ชัน firmware |
-| Admin Domain Configuration | Enabled | ADOM เปิดแล้วหลัง restore |
-| HA Mode | Standalone | ไม่ได้ทำ HA |
-| License Status | Valid | license ใช้งานได้ |
+| Platform | FortiAnalyzer-VM64-KVM | เป็นเครื่องเสมือนที่รันบน KVM |
+| Version | v7.6.2-build3415 | รุ่นซอฟต์แวร์ของเครื่อง |
+| Admin Domain Configuration | Enabled | ADOM เปิดใช้งานแล้วหลังกู้คืน |
+| HA Mode | Standalone | ใช้งานเครื่องเดียว ไม่ได้ทำระบบสำรองเครื่อง |
+| License Status | Valid | ใบอนุญาตใช้งานได้ |
 
-![ผล get system status](images/lab01/15_get_system_status.png)
+![ผลของคำสั่ง get system status](images/lab01/15_get_system_status.png)
 
 ## ปัญหาที่เจอและวิธีแก้
 
-- **คลิก root ในหน้า Select an ADOM ไม่ได้** → แล็บนี้ใช้ ADOM1/ADOM2 และหน้าจอรีโมตตอบสนองช้า ต้องรอสักครู่
-- **หน้าจอ "Waiting for response..."** → การเชื่อมต่อรีโมตหลุดชั่วคราว รอหรือ refresh แท็บ งานไม่หาย
-- **ลืมปิด Overwrite current IP and routing settings** → ไม่มีผลเสีย เพราะไฟล์มาจากแล็บชุดเดียวกัน IP ยังเป็น 10.0.13.125
+- **คลิก root ในหน้าเลือก ADOM ไม่ได้** → แล็บนี้ใช้ ADOM1 กับ ADOM2 และหน้าจอที่ต่อจากระยะไกลตอบสนองช้า ต้องรอสักครู่
+- **หน้าจอขึ้นว่า "Waiting for response..."** → การเชื่อมต่อจากระยะไกลหลุดชั่วคราว รอหรือโหลดแท็บใหม่ งานที่ทำไว้ไม่หาย
+- **ลืมปิดสวิตช์ Overwrite current IP and routing settings** → ไม่มีผลเสีย เพราะไฟล์สำรองมาจากแล็บชุดเดียวกัน IP จึงยังเป็น 10.0.13.125
 
 ## บทเรียน
 
-- ADOM **ปิดเป็นค่าเริ่มต้น** เปิดได้เฉพาะ admin ที่มี profile Super_User เมื่อเปิดแล้วต้องเลือก ADOM ตอน login
-- ADOM ประเภท **Fabric** ใช้กับอุปกรณ์ใน Security Fabric ส่วนประเภท **FortiGate** ใช้กับเครื่องเดี่ยว
-- ใน Security Fabric traffic log ของ session สร้างโดย FortiGate ตัวแรกที่เจอ session (ลด log ซ้ำ)
-- โหมด **analyzer** (ค่าเริ่มต้น) กับ **collector** เปลี่ยนได้ที่ widget System Information
+- ADOM **ปิดเป็นค่าเริ่มต้น** และเปิดได้เฉพาะผู้ดูแลที่มีสิทธิ์ระดับสูงสุด (Super_User) เมื่อเปิดแล้วต้องเลือก ADOM ทุกครั้งที่เข้าสู่ระบบ
+- ADOM ประเภท **Fabric** ใช้กับอุปกรณ์ที่อยู่ใน Security Fabric ส่วนประเภท **FortiGate** ใช้กับไฟร์วอลล์เครื่องเดี่ยว
+- ใน Security Fabric บันทึกการรับส่งข้อมูลของแต่ละการเชื่อมต่อจะถูกเขียนโดยไฟร์วอลล์ตัวแรกที่เห็นการเชื่อมต่อนั้น จึงไม่มีบันทึกซ้ำ
+- โหมด**วิเคราะห์** (analyzer เป็นค่าเริ่มต้น) กับโหมด**รวบรวม** (collector) สลับได้ที่กล่อง System Information
 
 ```bash
 get system status

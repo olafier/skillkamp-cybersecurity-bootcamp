@@ -1,6 +1,6 @@
 # 🔬 LAB 02 Summary: Log Data Flow and Navigating Logs
 
-> 🇹🇭 Thai version: [LAB-02.md](LAB-02.md)
+> Thai version: [LAB-02.md](LAB-02.md)
 > Screenshots are in `images/lab02/`
 
 ## Lab Overview
