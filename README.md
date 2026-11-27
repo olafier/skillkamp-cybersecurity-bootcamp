@@ -15,7 +15,7 @@ The purpose of this repository is to demonstrate my practical technical skills, 
 | [01](./Week-01-Network-Fundamentals/README.md) | October 31, 2026 | Network Fundamentals & Security Configuration | Completed |
 | [02](./Week-02-FortiGate-Firewall-Administration/README.md) | November 7, 2026 | FortiGate Firewall Administration | Completed |
 | [03](./Week-03-FortiAnalyzer-SOC-Analyst/README.md) | November 14, 2026 | SOC Analyst using FortiAnalyzer | Completed |
-| 04 | November 22, 2026 | Digital Forensics & Blue Team CTF | Upcoming |
+| [04](./Week-04-Digital-Forensics/README.md) | November 22, 2026 | Digital Forensics & Blue Team CTF | Completed |
 | 05 | November 28, 2026 | Penetration Testing & Red Team CTF | Upcoming |
 
 *Click a week number to view the full write-up.*
