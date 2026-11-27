@@ -12,6 +12,12 @@ The fourth week shifted from watching a network to examining the evidence left b
 
 The hands-on half was built around four forensic branches (File, Disk, Memory, Network) plus steganography, using free and open-source tooling on Kali Linux, with FTK Imager, Autopsy and Wireshark run on a Windows 11 ARM64 VM on Apple Silicon.
 
+### CTF Triage Flow
+
+The core methodology for the week — identify the real file type first, then pick the toolchain that matches it:
+
+![Digital Forensics CTF triage flow: file first, then branch by file type to the right tools](images/forensic-triage-flow.svg)
+
 ### Topics Covered
 
 #### 1. Digital Forensics Fundamentals

@@ -12,6 +12,12 @@
 
 ภาคปฏิบัติแบ่งตาม 4 สาขาหลัก (File, Disk, Memory, Network) บวก Steganography โดยใช้เครื่องมือฟรีและ open-source บน Kali Linux ส่วน FTK Imager, Autopsy และ Wireshark รันบน Windows 11 ARM64 VM บนเครื่อง Apple Silicon
 
+### แผนผังวิธีคิด (CTF Triage Flow)
+
+หัวใจของสัปดาห์นี้ — ระบุชนิดไฟล์จริงก่อน แล้วเลือกเครื่องมือตามประเภทไฟล์:
+
+![แผนผังวิธีคิดงาน forensics: file ก่อน แล้วแยกตามชนิดไฟล์ไปยังเครื่องมือที่เหมาะสม](images/forensic-triage-flow.svg)
+
 ### หัวข้อที่เรียน
 
 #### 1. พื้นฐาน Digital Forensics
