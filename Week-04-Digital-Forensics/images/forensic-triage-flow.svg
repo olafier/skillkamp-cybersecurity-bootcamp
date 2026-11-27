@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 960" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="startGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f6feb"/>
+      <stop offset="1" stop-color="#388bfd"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1060" height="960" rx="18" fill="#0d1117"/>
+  <rect x="1" y="1" width="1058" height="958" rx="17" fill="none" stroke="#30363d" stroke-width="2"/>
+
+  <!-- header -->
+  <text x="48" y="64" fill="#e6edf3" font-size="34" font-weight="700">Digital Forensics — CTF Triage Flow</text>
+  <text x="48" y="98" fill="#8b949e" font-size="17">วิธีคิดเมื่อได้ไฟล์โจทย์: ระบุชนิดจริงก่อน แล้วเลือกเครื่องมือตามประเภทไฟล์</text>
+  <text x="48" y="120" fill="#6e7681" font-size="14">Identify the real file type first, then pick the toolchain that matches it.</text>
+
+  <!-- START node -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="152" width="340" height="78" rx="14" fill="url(#startGrad)"/>
+  </g>
+  <text x="530" y="188" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle" font-family="'SF Mono','Consolas',monospace">file &lt;target&gt;</text>
+  <text x="530" y="213" fill="#cde3ff" font-size="13" text-anchor="middle">เช็กชนิดจริงก่อนเสมอ · identify the real type first</text>
+
+  <!-- vertical spine -->
+  <line x1="72" y1="260" x2="72" y2="892" stroke="#30363d" stroke-width="3"/>
+  <!-- connector from START down to spine -->
+  <path d="M530 230 L530 250 Q530 260 520 260 L82 260" fill="none" stroke="#30363d" stroke-width="3"/>
+
+  <!-- ================= BRANCH CARDS ================= -->
+  <!-- card template: dot on spine, connector, card with accent bar, type badge, tools -->
+
+  <!-- 1. Image -->
+  <circle cx="72" cy="312" r="7" fill="#f59e0b"/>
+  <line x1="72" y1="312" x2="150" y2="312" stroke="#30363d" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="272" width="862" height="80" rx="12" fill="#161b22"/>
+  </g>
+  <rect x="150" y="272" width="6" height="80" rx="3" fill="#f59e0b"/>
+  <text x="182" y="304" fill="#f59e0b" font-size="19" font-weight="700">รูป / Image</text>
+  <text x="182" y="328" fill="#6e7681" font-size="13" font-family="'SF Mono','Consolas',monospace">.jpg · .png</text>
+  <text x="430" y="306" fill="#e6edf3" font-size="16" font-family="'SF Mono','Consolas',monospace">binwalk · foremost · exiftool</text>
+  <text x="430" y="330" fill="#adbac7" font-size="16" font-family="'SF Mono','Consolas',monospace">strings · zsteg · steghide</text>
+
+  <!-- 2. Capture / pcap -->
+  <circle cx="72" cy="412" r="7" fill="#3b82f6"/>
+  <line x1="72" y1="412" x2="150" y2="412" stroke="#30363d" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="372" width="862" height="80" rx="12" fill="#161b22"/>
+  </g>
+  <rect x="150" y="372" width="6" height="80" rx="3" fill="#3b82f6"/>
+  <text x="182" y="404" fill="#3b82f6" font-size="19" font-weight="700">Network</text>
+  <text x="182" y="428" fill="#6e7681" font-size="13" font-family="'SF Mono','Consolas',monospace">.pcap · .pcapng</text>
+  <text x="430" y="406" fill="#e6edf3" font-size="16" font-weight="600">Wireshark</text>
+  <text x="430" y="430" fill="#adbac7" font-size="14">Protocol Hierarchy → Follow Stream → Export Objects</text>
+
+  <!-- 3. Memory -->
+  <circle cx="72" cy="512" r="7" fill="#a855f7"/>
+  <line x1="72" y1="512" x2="150" y2="512" stroke="#30363d" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="472" width="862" height="80" rx="12" fill="#161b22"/>
+  </g>
+  <rect x="150" y="472" width="6" height="80" rx="3" fill="#a855f7"/>
+  <text x="182" y="504" fill="#a855f7" font-size="19" font-weight="700">Memory dump</text>
+  <text x="182" y="528" fill="#6e7681" font-size="13" font-family="'SF Mono','Consolas',monospace">.raw · .mem · .vmem</text>
+  <text x="430" y="506" fill="#e6edf3" font-size="16" font-weight="600">Volatility</text>
+  <text x="430" y="530" fill="#adbac7" font-size="14" font-family="'SF Mono','Consolas',monospace">windows.pslist · windows.cmdline · memdump</text>
+
+  <!-- 4. Disk image -->
+  <circle cx="72" cy="612" r="7" fill="#14b8a6"/>
+  <line x1="72" y1="612" x2="150" y2="612" stroke="#30363d" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="572" width="862" height="80" rx="12" fill="#161b22"/>
+  </g>
+  <rect x="150" y="572" width="6" height="80" rx="3" fill="#14b8a6"/>
+  <text x="182" y="604" fill="#14b8a6" font-size="19" font-weight="700">Disk image</text>
+  <text x="182" y="628" fill="#6e7681" font-size="13" font-family="'SF Mono','Consolas',monospace">.dd · .E01 · .img</text>
+  <text x="430" y="616" fill="#e6edf3" font-size="16" font-weight="600">Autopsy · FTK Imager</text>
+
+  <!-- 5. Document / archive -->
+  <circle cx="72" cy="712" r="7" fill="#ec4899"/>
+  <line x1="72" y1="712" x2="150" y2="712" stroke="#30363d" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="672" width="862" height="80" rx="12" fill="#161b22"/>
+  </g>
+  <rect x="150" y="672" width="6" height="80" rx="3" fill="#ec4899"/>
+  <text x="182" y="704" fill="#ec4899" font-size="19" font-weight="700">Document / Archive</text>
+  <text x="182" y="728" fill="#6e7681" font-size="13" font-family="'SF Mono','Consolas',monospace">.docx · .zip · .pdf</text>
+  <text x="430" y="706" fill="#e6edf3" font-size="16" font-family="'SF Mono','Consolas',monospace">unzip · binwalk</text>
+  <text x="430" y="730" fill="#adbac7" font-size="14">แตกดู XML/ไฟล์ข้างใน · crack the password if locked</text>
+
+  <!-- 6. Audio -->
+  <circle cx="72" cy="812" r="7" fill="#22c55e"/>
+  <line x1="72" y1="812" x2="150" y2="812" stroke="#30363d" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="772" width="862" height="80" rx="12" fill="#161b22"/>
+  </g>
+  <rect x="150" y="772" width="6" height="80" rx="3" fill="#22c55e"/>
+  <text x="182" y="804" fill="#22c55e" font-size="19" font-weight="700">เสียง / Audio</text>
+  <text x="182" y="828" fill="#6e7681" font-size="13" font-family="'SF Mono','Consolas',monospace">.wav · .mp3</text>
+  <text x="430" y="806" fill="#e6edf3" font-size="16" font-weight="600">Audacity</text>
+  <text x="430" y="830" fill="#adbac7" font-size="14">Spectrogram view → ข้อความซ่อนในโดเมนความถี่</text>
+
+  <!-- footer -->
+  <text x="48" y="922" fill="#6e7681" font-size="13">SkillKamp Cybersecurity Bootcamp · Week 04 — Digital Forensics</text>
+  <text x="1012" y="922" fill="#6e7681" font-size="13" text-anchor="end">RPCA Cyber Club</text>
+</svg>
