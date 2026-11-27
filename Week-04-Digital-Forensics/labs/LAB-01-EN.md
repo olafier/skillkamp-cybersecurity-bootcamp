@@ -38,6 +38,8 @@ xxd suspect.jpg | tail      # inspect the trailer (FF D9 for JPEG)
 
 A hidden image concatenated after a JPEG's `FF D9` trailer shows up as a second `FF D8 … FF D9` pair — invisible to an image viewer, but recoverable.
 
+![Hex Fiend showing the FF D9 FF D8 boundary where a second JPEG begins](images/lab01/01_hexfiend_hidden_image.png)
+
 ## Exercise 3: CTF Challenges
 
 ### Hidden Text — File Forensics
@@ -62,6 +64,8 @@ grep -r -i "flag" _Data.docx.extracted/
 
 Inspected both `docProps/core.xml` (document metadata — title, subject, description) and `word/document.xml` (document body, where an XML comment `<!-- -->` can hide text).
 
+![binwalk -e extracting the inner XML files of a .docx (ZIP archive)](images/lab01/02_binwalk_docx.png)
+
 ### The Sound of Flower — Steganography (audio)
 
 A `.wav` file with a message hidden in the audio spectrogram.
@@ -72,7 +76,19 @@ A `.wav` file with a message hidden in the audio spectrogram.
 
 The challenge story hinted that an English keyboard distorted Thai input, so the flag involves Thai/English keyboard-layout substitution. Flag format: `FLAG{...}`.
 
-*(Screenshot: `images/lab01/spectrogram_rose.png`)*
+![Audacity spectrogram view of Sound.wav revealing hidden text](images/lab01/05_spectrogram_rose.png)
+
+## Exercise 4: Network Forensics with Wireshark
+
+Although no network challenge was solved, the Wireshark workflow was practiced on live traffic to reinforce the method.
+
+1. **Statistics → Protocol Hierarchy** — start here to see what protocols a capture contains and spot readable ones (HTTP/FTP) among the encrypted TLS.
+
+![Wireshark Protocol Hierarchy statistics](images/lab01/03_wireshark_protocol_hierarchy.png)
+
+2. **Right-click a packet → Follow → HTTP Stream** — read the full request/response of a conversation (here, plain-text Windows Update certificate traffic).
+
+![Wireshark Follow HTTP Stream](images/lab01/04_wireshark_follow_http_stream.png)
 
 ## Key Takeaways
 

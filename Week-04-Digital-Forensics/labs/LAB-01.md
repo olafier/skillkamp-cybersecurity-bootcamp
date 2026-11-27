@@ -38,6 +38,8 @@ xxd suspect.jpg | tail      # ดู trailer (FF D9 สำหรับ JPEG)
 
 ภาพที่ซ่อนต่อท้าย trailer `FF D9` ของ JPEG จะเจอคู่ `FF D8 … FF D9` เป็นชุดที่สอง — โปรแกรมดูรูปมองไม่เห็น แต่กู้ออกมาได้
 
+![Hex Fiend แสดงรอยต่อ FF D9 FF D8 จุดที่ภาพ JPEG ที่สองเริ่มต้น](images/lab01/01_hexfiend_hidden_image.png)
+
 ## แบบฝึกหัดที่ 3: โจทย์ CTF
 
 ### Hidden Text — File Forensics
@@ -62,6 +64,8 @@ grep -r -i "flag" _Data.docx.extracted/
 
 ตรวจทั้ง `docProps/core.xml` (metadata ของเอกสาร — title, subject, description) และ `word/document.xml` (เนื้อหาเอกสาร ที่ XML comment `<!-- -->` ซ่อนข้อความได้)
 
+![binwalk -e แตกไฟล์ XML ข้างในของ .docx (ซึ่งเป็น ZIP archive)](images/lab01/02_binwalk_docx.png)
+
 ### The Sound of Flower — Steganography (เสียง)
 
 ไฟล์ `.wav` ที่ซ่อนข้อความไว้ใน spectrogram ของเสียง
@@ -72,7 +76,19 @@ grep -r -i "flag" _Data.docx.extracted/
 
 โจทย์ใบ้ว่าคีย์บอร์ดอังกฤษทำให้การพิมพ์ไทยเพี้ยน → flag เกี่ยวกับการสลับแป้นไทย-อังกฤษ รูปแบบ flag: `FLAG{...}`
 
-*(รูป: `images/lab01/spectrogram_rose.png`)*
+![มุมมอง Spectrogram ใน Audacity ของ Sound.wav ที่เผยข้อความซ่อน](images/lab01/05_spectrogram_rose.png)
+
+## แบบฝึกหัดที่ 4: Network Forensics ด้วย Wireshark
+
+แม้จะไม่ได้แก้โจทย์สาย network แต่ได้ฝึก flow การใช้ Wireshark กับ traffic จริงเพื่อทบทวนวิธีการ
+
+1. **Statistics → Protocol Hierarchy** — เริ่มที่นี่ก่อน เพื่อดูว่า capture มี protocol อะไรบ้าง และหาตัวที่อ่านได้ (HTTP/FTP) ท่ามกลาง TLS ที่เข้ารหัส
+
+![สถิติ Protocol Hierarchy ใน Wireshark](images/lab01/03_wireshark_protocol_hierarchy.png)
+
+2. **คลิกขวาที่ packet → Follow → HTTP Stream** — อ่าน request/response เต็ม ๆ ของการเชื่อมต่อนั้น (ในที่นี้คือ traffic certificate ของ Windows Update แบบ plain text)
+
+![Wireshark Follow HTTP Stream](images/lab01/04_wireshark_follow_http_stream.png)
 
 ## สิ่งที่ได้เรียนรู้
 
